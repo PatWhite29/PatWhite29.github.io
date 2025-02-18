@@ -1,42 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="actividad2">Leaks</a>
-            <a class="navbar-brand" href="actividad2">News</a>
-            <a class="navbar-brand" href="actividad2">About</a>
-            <a class="navbar-brand" href="actividad2">Partners</a>
-            <a class="navbar-brand" href="actividad2">Partners</a>
-            <div>
-                <a class="btn-primary" href="actividad2">Donate </a>
-                <a class = "btn btn-primary" href="actividad2">Sumbit</a>
-            </div>
-        </nav>
-    </div>
-    <head>
-        <title>WikiLeaks 101</title>
+<head>
+    <title>Simple Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 10px 20px;
+            border-bottom: 2px solid #ccc;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .buttons a {
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .donate {
+            background: red;
+            color: white;
+        }
+        .submit {
+            background: #5d6d7e;
+            color: white;
+        }
+        .categories {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 18px;
+                color: #1C3D47;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://www.liblogo.com/img-logo/wi8695w6c5-wikileaks-logo-wikileaks-logo-.png" width="50" height="50" >
+        </div>
+
         
-    </head>
-    <body>
-        <h1>WikiLeaks 101</h1>
-        <div> 
+        <div class="nav-links">
+            <a href="#">Leaks</a>
+            <a href="#">News</a>
+            <a href="#">About</a>
+            <a href="#">Partners</a>
+        </div>
+
+        
+        <div class="buttons">
+            <a href="#" class="donate">Donate</a>
+            <a href="#" class="submit">Submit</a>
+        </div>
+    </div>
+    <title>WikiLeaks 101</title>
+    <h1>WikiLeaks 101</h1>
+    <input type="text" placeholder="Search Keywords" style="padding: 10px; width: 300px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px;">
+        <div class="categories">
             <p>Intelligence</p>
             <p>Global Economy</p>
             <p>International Politics</p>
             <p>Corporations</p>
-            <p>Goverment</p>
-            <p>War & Millitary</p>
+            <p>Government</p>
+            <p>War & Military</p>
         </div>
+        
         <div>
             <h2>Feature:</h2>
             <img src="https://wikileaks.org/IMG/arton717.png"><image></image>
-            <h2> The Intolerance Network</h2>
-            <p>Today, 5th August 2021, Wikileaks publishes "The Intolerance Network ...</p>
+            <h2>The Intolerance Network</h2>
+            <p>Today, 5th August 2021, WikiLeaks publishes "The Intolerance Network" over 17,000 documents from internationally active right wing campaigning organisations HazteOir and CitizenGO.</p>
         </div>
         <div>
             <img src="https://wikileaks.org/IMG/arton716.jpg" width="300" height="200">
             <h2>Fishrot:</h2>
             <p> Today, November 12, Wikileaks publishes over 30000 documents from SAMHREJI </p>
-
+            <img src="https://wikileaks.org/IMG/arton715.png"width="300" height="200">
+            <h2> OPCW Douma</h2>
+            <p> Today, October 23, WikiLeaks publishes a statement made by a panel that listened to testimony and reviewed evidence from a whistleblower from the OPCW (update).</p>
+            <img src="https://wikileaks.org/IMG/rubon33.png" width="300" height="200">
+            <h2> Pope's Orders</h2>
+            <p> Today, January 30th WikiLeaks publishes a set of documents from the Catholic Church, shedding light on the power struggle within highest offices.</p>
+            <img src="https://wikileaks.org/IMG/arton706.jpg" width="300" height="200">
+            <h2> US Embassy Shopping List</h2>
+            <p> Today, 21 December 2018, WikiLeaks publishes a searchable database of more than 16,000 procurement requests posted by United States embassies around the world.</p>
+            <img src="https://wikileaks.org/IMG/arton704.png" width="300" height="200">
+            <h2> Amazon Atlas</h2>
+            <p> Today, 11 Oct 2018, WikiLeaks publishes a highly confidential internal document from the cloud computing provider Amazon.</p>
+            <img src="https://wikileaks.org/IMG/arton703.png" width="300" height="200">
+            <h2> Dealmaker AI Yousef</h2>
+            <p>Today, 28 September 2018, WikiLeaks releases a secret document from the ICC portaining a dispute over commission payment in relation to $3.6B arms deal.</p>
         </div>
+    </body>
+    <footer style="background: #ccc; padding: 100px;">
+    </footer>    
 </html>
