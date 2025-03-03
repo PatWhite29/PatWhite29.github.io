@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var textNode = document.createTextNode("Este es un nodo de texto. ");
+                document.body.appendChild(textNode);
+
+                var heading = document.querySelector("h1");
+                heading.addEventListener("click", function() {
+                    var click = document.createTextNode(" Hola yo soy nuevo porq hiciste click  en H1 :D ");
+                    document.body.appendChild(click);
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <h1>(click me) Partes 1,2,3 de la Actividad 3 </h1>
+    </body>
+
+</html>
