@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Prueba de JS</h1>
+    
+    </body>
+    <script>
+        let x = 5;
+        console.log(x);
+        
+
+        let p = {titulo: "llano", autor: "jose"};
+        console.log(p);
+
+        function triplicar(n) {
+            return n * 3;
+        }
+        console.log(triplicar(5));
+
+        const trip = (a) => { return 3 * a }
+        console.log(trip(5));
+          
+        
+        //document.addEventListener("click", () => {
+            //console.log("Hola");
+
+            async function veAlmuseo(){
+                let respuesta = await fetch ("https://collectionapi.metmuseum.org/public/collection/v1/objects/40");
+                
+                let respuestaJSON = await respuesta.json();
+                console.log(respuestaJSON);
+                console.log(respuestaJSON.artistAlphaSort);
+
+                let d = document.createElement("h2");
+                d.innerHTML = respuestaJSON.artistAlphaSort
+                document.body.appendChild(d); 
+
+
+                let i = document.createElement("img");
+                i.src = respuestaJSON.primaryImage;
+                i.style.width = "300px";
+                document.body.appendChild(i);
+
+            }
+            veAlmuseo();
+            
+            
+            
+    </script>
+</html>

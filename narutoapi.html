@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Naruto API by Patricio Blanco AO1642057</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #ff4500;
+        }
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        #characters-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        #characters-container div {
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            background-color: #444;
+            width: 220px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #fff;
+        }
+        #characters-container img {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Naruto API by Patricio Blanco AO1642057</h2>
+    <h1>20 Naruto Characters from <a href="https://narutodb.xyz" target="_blank">https://narutodb.xyz/api</a></h1>
+    <div id="characters-container"></div>
+
+    <script>
+        async function getCharacters(){
+            const url = "https://narutodb.xyz/api/character?page=1&limit=1431";
+            const container = document.getElementById('characters-container');
+            container.innerHTML = '<p>Loading...</p>';
+            
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                container.innerHTML = '';
+
+                const importantCharacters = [
+                    "Naruto Uzumaki", "Sasuke Uchiha", "Sakura Haruno", "Kakashi Hatake",
+                    "Itachi Uchiha", "Jiraiya", "Tsunade", "Madara Uchiha", 
+                    "Obito Uchiha", "Minato Namikaze", "Hinata Hyuga", "Rock Lee", 
+                    "Gaara", "Shikamaru Nara", "Neji Hyuga", "Might Guy", 
+                    "Pain (Nagato)", "Hashirama Senju", "Tobirama Senju", "Orochimaru"
+                ];
+
+                const filteredCharacters = data.characters.filter(character => importantCharacters.includes(character.name));
+
+                if (filteredCharacters.length > 0) {
+                    filteredCharacters.forEach(character => {
+                        const characterDiv = document.createElement('div');
+                        characterDiv.innerHTML = `
+                            <h3>${character.name}</h3>
+                            <img src="${character.images ? character.images[0] : ''}" alt="${character.name}" width="200">
+                        `;
+                        container.appendChild(characterDiv);
+                    });
+                } else {
+                    container.innerHTML = '<p>No important characters found.</p>';
+                }
+            } catch (error) {
+                container.innerHTML = `<p>Error: ${error.message}</p>`;
+            }
+        }
+
+        window.onload = getCharacters;
+    </script>
+</body>
+</html>
