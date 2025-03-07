@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Escuelas</title>
+</head>
+<body>
+    <h1>Lista de escuelas</h1>
+   
+    <a href="/">Bienvenida</a>
+
+    <script>
+        async function obtenerEscuelas() {
+            //Agregar el url adecuado
+          const listaEscuelas= await fetch("/api/escuelas");
+          const jsonLE=await listaEscuelas.json();
+          console.log(jsonLE);
+          //Muestra las escuelas en el html
+          const listaElement = document.createElement('ul');
+          jsonLE.forEach(escuela => {
+              const item = document.createElement('li');
+              item.textContent = escuela.nombre; // Assuming 'nombre' is a property of each school object
+              listaElement.appendChild(item);
+          });
+          document.body.appendChild(listaElement);
+
+        }
+        obtenerEscuelas();
+    </script>
+</body>
+</html>
